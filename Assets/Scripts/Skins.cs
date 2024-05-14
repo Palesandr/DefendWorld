@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using YG;
 
 public class Skins : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class Skins : MonoBehaviour
             PlayerPrefs.SetInt("money", skinShop.money);
             PlayerPrefs.SetInt("buy" + scinID, 1);
             PlayerPrefs.Save();
+
+            /*YandexGame.savesData.money = skinShop.money;
+            YandexGame.savesData.skinID = 1;
+            YandexGame.SaveProgress();*/
         }
     }
 
@@ -36,8 +41,12 @@ public class Skins : MonoBehaviour
         skinShop.activeScinID = scinID;
         isSelected = true;
         buttonSelect.gameObject.SetActive(false);
+
         PlayerPrefs.SetInt("skinsID", scinID);
         PlayerPrefs.Save();
+
+        //YandexGame.savesData.skinID = scinID;
+        //YandexGame.SaveProgress();
     }
 
 }

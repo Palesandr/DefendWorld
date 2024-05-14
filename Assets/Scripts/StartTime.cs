@@ -12,12 +12,15 @@ public class StartTime : MonoBehaviour
 
 
     private void Start()
-     { 
-         StartCoroutine(startTimer());
+     {
+        
+        StartCoroutine(startTimer());
      }
 
      IEnumerator startTimer()
      {
+        //CoroutineTimer.instance._isPlay = 1;
+
         AudioManager.instance.Play("Timer");
         imageTime.sprite = startImage[0];
         yield return new WaitForSeconds(1f);
@@ -32,5 +35,6 @@ public class StartTime : MonoBehaviour
         this.gameObject.SetActive(false);
         gameMenu.SetActive(true);
         pauseMenu.SetActive(true);
+        CoroutineTimer.instance._isPlay = 0;
     }
 }

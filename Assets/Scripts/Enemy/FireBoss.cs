@@ -29,7 +29,7 @@ public class FireBoss : MonoBehaviour
 
 
 
-        if (dist <= 8f)
+        if (dist <= 10f)
         {
             if (Time.time > nextSpawnTime)
             {
@@ -50,7 +50,7 @@ public class FireBoss : MonoBehaviour
                     AudioManager.instance.Play("EnemyFire3");
                 }
                 //nextSpawnTime = Time.time + timeBetweenSpawns;
-                nextSpawnTime = Time.time + Random.Range(0.5f, 1f);
+                nextSpawnTime = Time.time + Random.Range(0.2f, 0.4f);
             }
         }
     }

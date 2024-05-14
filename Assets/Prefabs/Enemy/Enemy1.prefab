@@ -205,11 +205,15 @@ MonoBehaviour:
   - {fileID: 6030497598516166976, guid: 75b7926d1ddf995418916b5cef49f93c, type: 3}
   - {fileID: 3396126357988486397, guid: 92086501ea8faa94eadccbd646fd97ca, type: 3}
   - {fileID: 1238450942964543937, guid: 37008500ab09f06448a039eb74ae55f1, type: 3}
-  dropChance: 0600000007000000090000000700000005000000
+  - {fileID: 3443376241267637764, guid: f2a35c9f9f1264345ac8e1cb51d4d6b3, type: 3}
+  - {fileID: 3718437021990066532, guid: a9582f2de362863438c1bfc79ef42916, type: 3}
+  dropChance: 06000000070000000900000007000000050000000100000001000000
   spawnEffect: {fileID: 4761556566518239850, guid: d79aa1aba5da9c046b32c965d6e53a18, type: 3}
   isBomb: 0
   bomb: {fileID: 0}
   isRocket: 0
+  FloatingPoints: {fileID: 3444639321829389409, guid: ef8efa36399afb44c93431ec175db8d0, type: 3}
+  FloatingPointsCombo: {fileID: 3444639321829389409, guid: d5ca3cd65b3db9c4a97ff105e23cb692, type: 3}
   agent: {fileID: -5511838797584054251}
 --- !u!114 &2914294579419976388
 MonoBehaviour:
@@ -299,10 +303,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a2ba8ecc974a2de4da25cfa9e42c71f3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

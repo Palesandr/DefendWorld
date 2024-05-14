@@ -93,12 +93,12 @@ public class BombWall : MonoBehaviour
             switch (hitInfo.collider.name)
             {
                 case "Shield":
-                    rb.AddForce(transform.up * 6f, ForceMode2D.Impulse);
+                    rb.AddForce(transform.up * 14f, ForceMode2D.Impulse);
                     isDetectedBomb = true;
                     //Debug.Log(hitInfo.collider.name);
                     break;
                 case "Player":
-                    rb.AddForce(transform.up * 6f, ForceMode2D.Impulse);
+                    rb.AddForce(transform.up * 14f, ForceMode2D.Impulse);
                     isDetectedBomb = true;
                    // Debug.Log(hitInfo.collider.name);
                     break;

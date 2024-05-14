@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossSheild : MonoBehaviour
 {
 
-    public float shieldHealth;
+    public static float shieldHealth;
     public ParticleSystem particleSystemShield;
 
     void Update()

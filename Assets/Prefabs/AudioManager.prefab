@@ -1,0 +1,257 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6713992882465192592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6713992882465192598}
+  - component: {fileID: 6713992882465192593}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6713992882465192598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713992882465192592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.0264363, y: -0.3333795, z: 95.49999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6713992882465192593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713992882465192592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9870de1e81ca63f4191cc1092f2ea8f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: EnemyFire1
+    clip: {fileID: 8300000, guid: 7e36e8645224b4e48821f0f892f0f02b, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyFire2
+    clip: {fileID: 8300000, guid: d2dae719e87223243ae7239c8802a896, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyFire3
+    clip: {fileID: 8300000, guid: 86034175e53db9f4aa40ada73c45243d, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerFire
+    clip: {fileID: 8300000, guid: 077ed0e955951c842acefb236007402f, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDie
+    clip: {fileID: 8300000, guid: a834b47dcceeec54981443d00f472b2e, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TowerFire
+    clip: {fileID: 8300000, guid: eeb8481cf0919244391e64304aa71b53, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BulletBonus
+    clip: {fileID: 8300000, guid: f4529aeca0ebe4042b246809a305b0cb, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShieldBonus
+    clip: {fileID: 8300000, guid: e9b7d66e6aa28e64d9ec7d49d6dcc73c, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: HealthBonus
+    clip: {fileID: 8300000, guid: ae3379748d5448a47a26a45f851be5aa, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShieldOff
+    clip: {fileID: 8300000, guid: 022fbdda9c640ff4cbdd30e969bf71ad, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShieldShoot
+    clip: {fileID: 8300000, guid: 2cb0f1dcd19c1f042b0af110074b806c, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDamage
+    clip: {fileID: 8300000, guid: 707072e82eb84f7479150ec8ff7fea19, type: 3}
+    volume: 0.06
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Bomb
+    clip: {fileID: 8300000, guid: 9cb088044e975864cb1ae02d53dfcdea, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerDamage
+    clip: {fileID: 8300000, guid: 61889e5271c3858439d0869cba4f2674, type: 3}
+    volume: 0.06
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerBomb
+    clip: {fileID: 8300000, guid: 1addfd8a183f56041b60ccaed3f23f4e, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Timer
+    clip: {fileID: 8300000, guid: d71a3ad026b75b449902f5c2301d70eb, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: TimerFinally
+    clip: {fileID: 8300000, guid: 51916a20fbaf5104791ebadfef2a6dda, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DieSound
+    clip: {fileID: 8300000, guid: 15a7420445657b748ba3750a00ab08f0, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: ScoreSound
+    clip: {fileID: 8300000, guid: 62109afd04e110348bebd47a3c0acc19, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: EnergyShoot
+    clip: {fileID: 8300000, guid: 1b5e76b101c769c45b641a53181f1cc5, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MusicBoss2
+    clip: {fileID: 8300000, guid: 55335df00b8e07f4a83925d7795c7ca7, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicBoss1
+    clip: {fileID: 8300000, guid: 5e983fa96f9575f499ebac67badeb413, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicBoss3
+    clip: {fileID: 8300000, guid: f57c1c7493603d04b8c78021d740de67, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Magnit
+    clip: {fileID: 8300000, guid: 48e7e83933b10524ea7b11dfe8fef0d4, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AcumEnergy
+    clip: {fileID: 8300000, guid: f8f638b7dc844d54c870ab73124c6433, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SpawnBoss
+    clip: {fileID: 8300000, guid: 699c239a886a0ce4984c35cbdb6d999a, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Wall
+    clip: {fileID: 8300000, guid: 8b7df32ce9b53b74c9a529d8a5a04fec, type: 3}
+    volume: 0.08
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ExplosionBombWave
+    clip: {fileID: 8300000, guid: 040edd95c717b454a86b8f8ac7b684cf, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BonusMoney
+    clip: {fileID: 8300000, guid: 740ff850bab4a0b43952576d848b6cd9, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StartRocket
+    clip: {fileID: 8300000, guid: 8002e81657c8e164aae3eb51aae33f05, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: UpdateCompleteGun
+    clip: {fileID: 8300000, guid: a21ad39bdb288014580d0869e9da00a2, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ScoreSound1
+    clip: {fileID: 8300000, guid: 56e69ac1445a8914b8b2c6d9ac413c9c, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicBoss4
+    clip: {fileID: 8300000, guid: 926a34f4d5e9e054396c1f0e23caaac8, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MusicBoss5
+    clip: {fileID: 8300000, guid: 83a42eedf50fe5b469109b2000ca5a70, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PlayerDie
+    clip: {fileID: 8300000, guid: 3992e0756a2759144bbe1fbb3aaedbbd, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

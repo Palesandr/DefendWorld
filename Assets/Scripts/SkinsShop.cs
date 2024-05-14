@@ -24,6 +24,7 @@ public class SkinsShop : MonoBehaviour
         {
             activeScinID = PlayerPrefs.GetInt("skinsID");
         }
+
         skins[activeScinID].isBuy = true;
         skins[activeScinID].isSelected = true;
         PlayerPrefs.SetInt("buy" + activeScinID, 1);

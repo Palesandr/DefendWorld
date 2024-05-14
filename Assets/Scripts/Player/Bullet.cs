@@ -16,8 +16,9 @@ public class Bullet : MonoBehaviour
     {
         rand = Random.Range(0, hitEffect.Length);
         GameObject effect = Instantiate(hitEffect[rand], transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        AudioManager.instance.Play("Wall");
         Destroy(effect, 0.15f);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
@@ -55,6 +56,7 @@ public class Bullet : MonoBehaviour
             boss.TakeDamage(damage);
             GameObject effect = Instantiate(hitEffect[rand], transform.position, Quaternion.identity);
             Destroy(effect, 0.15f);
+            AudioManager.instance.Play("EnemyDamage");
             Destroy(gameObject);
         }
 
@@ -76,7 +78,8 @@ public class Bullet : MonoBehaviour
             GameObject effect = Instantiate(hitEffect[rand], transform.position, Quaternion.identity);
             Destroy(effect, 0.2f);
             Destroy(gameObject);
-        }
+        } 
+       
 
     }
 }

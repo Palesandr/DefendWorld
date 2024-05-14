@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 7296012232702396213}
   - component: {fileID: 7296012232702396214}
   - component: {fileID: 7296012232702396215}
+  - component: {fileID: 4429163869756839000}
   m_Layer: 0
   m_Name: ShieldBoss1
   m_TagString: Untagged
@@ -190,8 +191,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a040ff5c3718f5e46b9c034618eb8aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldHealth: 60
-  particleSystemShield: {fileID: 0}
+  particleSystemShield: {fileID: 102465013828716678}
+--- !u!58 &4429163869756839000
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296012232702396212}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.73
 --- !u!1 &7296012232735044280
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +254,11 @@ GameObject:
   - component: {fileID: 7296012233062863043}
   - component: {fileID: 7327069171116442121}
   - component: {fileID: 7405610723540026151}
+  - component: {fileID: 6641959675777066300}
+  - component: {fileID: 5321709999202627738}
+  - component: {fileID: 3152670978514436521}
+  - component: {fileID: 8827648421091172087}
+  - component: {fileID: 5281697042608389967}
   m_Layer: 0
   m_Name: Boss3
   m_TagString: Untagged
@@ -331,7 +352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f78d21936a281048b9d65162946e436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 120
   coinValue: 80
   deathEffect: {fileID: 4573044683255375891, guid: e876050f0acad01488f4a3feb83ce066, type: 3}
   timeOffSheild: 10
@@ -342,6 +362,9 @@ MonoBehaviour:
   spawnPoints: []
   startWaitTime: 0
   agent: {fileID: 7405610723540026151}
+  targetTag: BonusHealth
+  target: {fileID: 0}
+  LimitHealth: 0
 --- !u!114 &7296012233062863041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,6 +441,127 @@ NavMeshAgent:
   m_BaseOffset: 0.365
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!50 &6641959675777066300
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296012233062863046}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!61 &5321709999202627738
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296012233062863046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0037640333, y: -0.19573039}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.16, y: 0.73}
+    newSize: {x: 1.16, y: 0.73}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3030336, y: 0.38370788}
+  m_EdgeRadius: 0
+--- !u!61 &3152670978514436521
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296012233062863046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.17691016}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.16, y: 0.73}
+    newSize: {x: 1.16, y: 0.73}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.16, y: 0.23314595}
+  m_EdgeRadius: 0
+--- !u!68 &8827648421091172087
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296012233062863046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.43458277, y: -0.2932285}
+  - {x: -0.0010204315, y: 0.3675208}
+  - {x: 0.43139362, y: -0.29485154}
+  - {x: -0.42565745, y: -0.29404962}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
+--- !u!68 &5281697042608389967
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296012233062863046}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.35146457, y: -0.25408578}
+  - {x: 0.00015771389, y: 0.3264792}
+  - {x: 0.34871292, y: -0.26023376}
+  - {x: -0.344078, y: -0.2583443}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &7296012233322275144
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +650,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ff7d2a21ace4bd419582055039fd5ca, type: 3}
+--- !u!198 &102465013828716678 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3361659273419552377, guid: 6ff7d2a21ace4bd419582055039fd5ca, type: 3}
+  m_PrefabInstance: {fileID: 3443850942099455743}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3436097752107678927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 28284508081881648, guid: 6ff7d2a21ace4bd419582055039fd5ca, type: 3}

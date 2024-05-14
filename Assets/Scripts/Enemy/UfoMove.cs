@@ -4,60 +4,50 @@ using UnityEngine;
 
 public class UfoMove : MonoBehaviour
 {
-    public float speed = 5f;
-    GameObject player;
-    public int damage;
-    public Transform _player;
+    public string targetTag = "BonusShield"; // тег объектов, к которым нужно двигаться
+    private Rigidbody2D rb;
+    public float speed; // скорость движения
+    
+
+    public Transform target; // текущий ближайший объект
+
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
+        //FindNearestTarget();
     }
 
     private void Update()
     {
-        /*ar heading = transform.position - _player.position;
+        FindNearestTarget();
 
-        float dist = Vector3.Distance(player.transform.position, transform.position);
 
-        if (dist <= 7f)
+        if (target != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position - _player.position, _player.position, speed * Time.fixedDeltaTime);
-            //transform.RotateAround(_player.position, Vector3.back, 90 * Time.deltaTime);
+            Vector2 direction = target.position - transform.position;
+            rb.velocity = direction.normalized * speed;
         }
-        //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.fixedDeltaTime);
-        //transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, Mathf.Atan2(player.transform.position.y - transform.position.y, player.transform.position.x - transform.position.x) * Mathf.Rad2Deg - 90);
-        //transform.RotateAround(_player.position, Vector3.back, 90 * Time.deltaTime);
-
-        Debug.Log("heading: " + heading);
-        Debug.Log("dist: " + dist);*/
-
-
-
-
     }
 
-   /* private void OnTriggerEnter2D(Collider2D hitInfo)
+    private void FindNearestTarget()
     {
-        PlayerController player = hitInfo.GetComponent<PlayerController>();
-        Shield shield = hitInfo.GetComponent<Shield>();
+        GameObject[] targets = GameObject.FindGameObjectsWithTag(targetTag); //массив объектов с тегом "BonusShield"
+        float closestDistance = Mathf.Infinity;
+        Transform closestTarget = null;
 
-        if (player != null)
+        foreach (GameObject targetObject in targets)
         {
-            AudioManager.instance.Play("EnemyDie");
-            player.TakeDamage(EnemyBullet.damage);
-            Destroy(gameObject);
-            //GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            //Destroy(effect, 0.3f);
+            float distance = Vector2.Distance(transform.position, targetObject.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestTarget = targetObject.transform;
+            }
         }
 
-        if (shield != null)
-        {
-            AudioManager.instance.Play("EnemyDie");
-            shield.TakeDamage(EnemyBullet.damage);
-            //GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
-            //Destroy(effect, 0.3f);
-            Destroy(gameObject);
-        }
-    }*/
+        target = closestTarget;
+    }
+
+
 }

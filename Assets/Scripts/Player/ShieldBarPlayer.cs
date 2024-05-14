@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ShieldBarPlayer : MonoBehaviour
 {
     public Image shieldBar;
+
     public TextMeshProUGUI textShield;
 
 

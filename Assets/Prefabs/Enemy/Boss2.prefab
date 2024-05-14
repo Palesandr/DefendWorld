@@ -129,8 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a040ff5c3718f5e46b9c034618eb8aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldHealth: 50
-  particleSystemShield: {fileID: 0}
+  particleSystemShield: {fileID: 6739677731904136397}
 --- !u!58 &158789120139779522
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -319,7 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f78d21936a281048b9d65162946e436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
   coinValue: 70
   deathEffect: {fileID: 4573044683255375891, guid: 8683627bbe8eb09408b3958a49211810, type: 3}
   timeOffSheild: 15
@@ -330,6 +328,9 @@ MonoBehaviour:
   spawnPoints: []
   startWaitTime: 0
   agent: {fileID: 6044655469005667557}
+  targetTag: BonusHealth
+  target: {fileID: 0}
+  LimitHealth: 0
 --- !u!114 &8831435762448190471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,10 +468,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8831435762448190467}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.012957878, y: 0}
@@ -574,6 +575,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ff7d2a21ace4bd419582055039fd5ca, type: 3}
+--- !u!198 &6739677731904136397 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3361659273419552377, guid: 6ff7d2a21ace4bd419582055039fd5ca, type: 3}
+  m_PrefabInstance: {fileID: 8299894953204535988}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8307833855970005124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 28284508081881648, guid: 6ff7d2a21ace4bd419582055039fd5ca, type: 3}

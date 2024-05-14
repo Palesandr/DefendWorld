@@ -18,7 +18,7 @@ public class Magnet : MonoBehaviour
         circleCollider.isTrigger = true;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         // Получаем все коллайдеры 2D внутри радиуса действия магнита
         Collider2D[] targets = Physics2D.OverlapCircleAll(transform.position, radius);
@@ -30,8 +30,8 @@ public class Magnet : MonoBehaviour
             {
                 // Притягиваем объект к магниту
                 Vector2 direction = transform.position - target.transform.position;
-                target.GetComponent<Rigidbody2D>().AddForce(direction.normalized * forceStrength * Time.fixedDeltaTime);
-                AudioManager.instance.Play("Magnit");
+                target.GetComponent<Rigidbody2D>().AddForce(direction.normalized * forceStrength * Time.deltaTime);
+                //AudioManager.instance.Play("Magnit");
             }
         }
     }

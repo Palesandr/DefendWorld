@@ -24,6 +24,10 @@ public class RandomBonus : MonoBehaviour
         ba = GameObject.FindAnyObjectByType<BulletAnimation>();
     }
 
+    private void FixedUpdate()
+    {
+        transform.Rotate(0, 0, -3f);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -96,12 +100,15 @@ public class RandomBonus : MonoBehaviour
 
 
         AudioManager.instance.Play("BulletBonus");
+        
         Destroy(gameObject);
     }
 
     void plusScore()
     {
-        GameManagers.scoreTemp += 100;
+        AudioManager.instance.Play("BonusMoney");
+        //GameManagers.scoreTemp += 100;
+        GameManagers.instance.ChangeScore(100);
         Destroy(gameObject);
     }
 

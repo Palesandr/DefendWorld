@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using YG;
 
 public class Shield : MonoBehaviour
 {
@@ -26,9 +27,13 @@ public class Shield : MonoBehaviour
             instance = this;
         }
 
-
         shieldHealth = PlayerPrefs.GetFloat("maxHealthShield");
         maxHP = PlayerPrefs.GetFloat("maxHealthShield"); 
+        
+        /*shieldHealth = YandexGame.savesData.maxHealthShield;
+        maxHP = YandexGame.savesData.maxHealthShield;
+        YandexGame.LoadProgress();*/
+
         spriteRenderer = GetComponent<SpriteRenderer>();
 
 
@@ -63,6 +68,9 @@ public class Shield : MonoBehaviour
                     UpgradeShield();
                     PlayerPrefs.SetFloat("healthShield", shieldHealth);
                     PlayerPrefs.Save();
+
+                    //YandexGame.savesData.healthShield = shieldHealth;
+                    //YandexGame.SaveProgress();
                 }
             }
         }
@@ -81,7 +89,7 @@ public class Shield : MonoBehaviour
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
         }
 
-        if ((shieldHealth >= 0) && (shieldHealth <= 10))
+        /*if ((shieldHealth >= 0) && (shieldHealth <= 10))
         {
             spriteRenderer.sprite = spriteShield[0];
             spriteRenderer.enabled = true;
@@ -96,6 +104,36 @@ public class Shield : MonoBehaviour
         }
 
         if ((shieldHealth > 30) && (shieldHealth <= 40))
+        {
+            spriteRenderer.sprite = spriteShield[2];
+            spriteRenderer.enabled = true;
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        }
+
+        if (shieldHealth > 40)
+        {
+            spriteRenderer.sprite = spriteShield[3];
+            spriteRenderer.enabled = true;
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        }
+        
+        */
+        
+        if (shieldHealth > 0) 
+        {
+            spriteRenderer.sprite = spriteShield[0];
+            spriteRenderer.enabled = true;
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        }
+
+        if (shieldHealth > 20)
+        {
+            spriteRenderer.sprite = spriteShield[1];
+            spriteRenderer.enabled = true;
+            gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        }
+
+        if (shieldHealth > 30)
         {
             spriteRenderer.sprite = spriteShield[2];
             spriteRenderer.enabled = true;

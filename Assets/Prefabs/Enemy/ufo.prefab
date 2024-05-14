@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6718056560345420423}
   - component: {fileID: 6718056560345420419}
   - component: {fileID: 1752852085117719642}
+  - component: {fileID: 5861434849260912896}
   m_Layer: 0
   m_Name: ufo
   m_TagString: Ufo
@@ -128,7 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   damage: 0
-  _player: {fileID: 0}
+  objectsArray: []
+  closestObject: {fileID: 0}
 --- !u!50 &6718056560345420419
 Rigidbody2D:
   serializedVersion: 4
@@ -157,7 +159,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6718056560345420424}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a2ba8ecc974a2de4da25cfa9e42c71f3, type: 3}
@@ -246,3 +248,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &5861434849260912896
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6718056560345420424}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.68

@@ -21,7 +21,7 @@ public class FireEnemyBomb : MonoBehaviour
            //AudioManager.instance.Play("EnemyFire");
 
             //nextSpawnTime = Time.time + timeBetweenSpawns;
-            nextSpawnTime = Time.time + Random.Range(3f, 5f);
+            nextSpawnTime = Time.time + Random.Range(5f, 8f);
         }
     }
 }

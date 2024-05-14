@@ -25,6 +25,8 @@ public class EnemyBomb : MonoBehaviour
         PlayerController player = hitInfo.GetComponent<PlayerController>();
         Shield shield = hitInfo.GetComponent<Shield>();
         Bullet bullet = hitInfo.GetComponent<Bullet>();
+        Energy energy = hitInfo.GetComponent<Energy>();
+        BombWave bombWave = hitInfo.GetComponent<BombWave>();
 
         if (player != null)
         {
@@ -54,6 +56,28 @@ public class EnemyBomb : MonoBehaviour
             Destroy(gameObject);
             AudioManager.instance.Play("Bomb");
         }
+
+        if (energy != null)
+        {
+            Debug.Log(hitInfo.name);
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.2f);
+            Destroy(gameObject);
+            AudioManager.instance.Play("Bomb");
+        } 
+        
+        if (bombWave != null)
+        {
+            Debug.Log(hitInfo.name);
+            GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+            Destroy(effect, 0.2f);
+            Destroy(gameObject);
+            AudioManager.instance.Play("Bomb");
+        } 
+        
+
+
+
 
     }
 

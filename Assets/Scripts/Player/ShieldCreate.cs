@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShieldCreate : MonoBehaviour
 {
-    public ParticleSystem particleSystemShield;
+    public ParticleSystem particleSystemShield; 
     bool onShield;
 
     private void Start()
@@ -62,7 +62,7 @@ public class ShieldCreate : MonoBehaviour
 
     IEnumerator startShield()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
         onShield = true;
     }
 

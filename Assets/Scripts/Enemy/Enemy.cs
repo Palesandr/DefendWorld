@@ -3,7 +3,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
-
+using TMPro;
 
 public class Enemy : MonoBehaviour
 {
@@ -29,6 +29,12 @@ public class Enemy : MonoBehaviour
     public GameObject bomb;
     [Header("есть ли ракеты у врага")]
     public bool isRocket = false; //может ли враг сбрасывать бомбы
+    public GameObject FloatingPoints;
+    public GameObject FloatingPointsCombo;
+
+    private float speedTimerLimit = 3f; //проверка скорости на 0
+    private float speedTimer = 0f;
+    float speed;
 
 
     public NavMeshAgent agent;
@@ -54,6 +60,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        //isCoins = true;
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
@@ -80,6 +87,19 @@ public class Enemy : MonoBehaviour
 
             //Debug.Log(EnemyBullet.damage);
         }
+    }
+
+    private void Update()
+    {
+        //speed = agent.velocity.magnitude;
+        //
+        //Debug.Log(gameObject.name +  "         :    Скорость объекта: " + speed);
+
+        
+
+        // Если таймер превысил лимит комбо времени, обнуляем счетчик комбо
+       
+
     }
 
     void FixedUpdate()
@@ -132,6 +152,20 @@ public class Enemy : MonoBehaviour
             }
         }
 
+        speed = agent.velocity.magnitude;
+        speedTimer += Time.fixedDeltaTime;
+
+        if (speedTimer > speedTimerLimit)
+        {
+            if (speed < 0.2f)
+            {
+                randomSpawn = Random.Range(0, spawnPoints.Length);
+                agent.SetDestination(spawnPoints[randomSpawn].transform.position);
+            }
+
+
+        }
+
     }
 
     public void TakeDamage(int damage)
@@ -140,25 +174,42 @@ public class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
+            if (GameManagers.isCoins)
+            {
+                if (GameManagers.isCombo)
+                {
+                    coinValue = coinValue * 2;
+                    GameObject points = Instantiate(FloatingPointsCombo, transform.position, Quaternion.identity) as GameObject;
+                    points.transform.GetChild(0).GetComponent<TextMeshPro>().text = coinValue.ToString();
+
+                }
+                else
+                {
+                    GameObject points = Instantiate(FloatingPoints, transform.position, Quaternion.identity) as GameObject;
+                    points.transform.GetChild(0).GetComponent<TextMeshPro>().text = coinValue.ToString();
+
+                }
+            }
             AudioManager.instance.Play("EnemyDie");
+            GameManagers.isCombo = true;
             Die();
         }
     }
 
-    /*public void DropItems()
-    {
-        for (int i = 0; i < objBonus.Length; i++)
-        {
-            if (Random.value < dropChance[i] / 100f)
-            {
-                Instantiate(objBonus[i], transform.position, Quaternion.identity);
-            }
-        }
-    }*/
 
     private void Die()
-    {        
-        GameManagers.instance.ChangeScore(coinValue);
+    {
+        /*comboCounter++;
+        int totalScore = comboCounter * scorePerKill;
+        Debug.Log("Комбо: " + comboCounter + ", Очки: " + totalScore);*/
+
+
+        //Debug.Log("Комбо включено!");
+        if (GameManagers.isCoins)
+        {
+            GameManagers.instance.ChangeScore(coinValue);
+        }
+        
         Destroy(gameObject);
         GameManagers.instance.MinusCount(1);
         //GameManagers.instance.MinusEnemy(1);
@@ -175,28 +226,6 @@ public class Enemy : MonoBehaviour
             }
         }
 
-        /*randBonus = Random.Range(1, 101);
-        if (randBonus <= dropChance[0])
-        {
-            Instantiate(objBonus[0], transform.position, Quaternion.identity);
-        }
-        else if (randBonus <= dropChance[1])
-        {
-            Instantiate(objBonus[1], transform.position, Quaternion.identity);
-        }
-        else if (randBonus <= dropChance[2])
-        {
-            Instantiate(objBonus[2], transform.position, Quaternion.identity);
-        }
-        else if (randBonus <= dropChance[3])
-        {
-            Instantiate(objBonus[3], transform.position, Quaternion.identity);
-        }
-        else if (randBonus <= dropChance[4])
-        {
-            Instantiate(objBonus[4], transform.position, Quaternion.identity);
-        }*/
-
 
         //PlayerPrefs.SetInt("money", GameManagers.score);
         //PlayerPrefs.Save();
@@ -208,21 +237,5 @@ public class Enemy : MonoBehaviour
         var driftPos = target.transform.position + (Vector3)(agentDrift * Random.insideUnitCircle);
         agent.SetDestination(driftPos);
     }
-
-
-    /*void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Disk"))
-        {
-            // Вычисляем вектор отскока как разность вектора текущей позиции и позиции объекта, от которого отскакиваем
-            Vector2 bounceVector = transform.position - collision.transform.position;
-
-            // Нормализуем вектор для предотвращения рывка
-            bounceVector.Normalize();
-
-            // Добавляем приложенную силу для отскока
-            GetComponent<Rigidbody2D>().AddForce(bounceVector * 5, ForceMode2D.Impulse);
-        }
-    }*/
 
 }
